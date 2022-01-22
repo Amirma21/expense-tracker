@@ -29,7 +29,7 @@ const ExpenseApp = () => {
   console.log(transeActions);
   return (
     //  main div
-    <div className="sm:w-2/5  mx-auto p-3 w-4/5">
+    <div className="md:w-2/5 sm:w-3/5 mx-auto py-7 w-4/5 rounded-3xl bg-gray-100 px-3" >
       <OverViewComponent
         income={income}
         expense={expense}
