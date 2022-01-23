@@ -1,6 +1,7 @@
 import { parse } from "postcss";
 import { useEffect, useState } from "react";
 import OverViewComponent from "./OverViewComponent";
+import TranseActionList from "./TranseActionList";
 
 const ExpenseApp = () => {
   const [income, setIncome] = useState(0);
@@ -20,22 +21,24 @@ const ExpenseApp = () => {
         : (exp = exp + parseFloat(t.amount));
     });
 
-    console.log(inc, exp);
+    console.log(inc, exp ,transeActions.length);
 
     setIncome(inc);
     setexpense(exp);
   }, [transeActions]);
 
-  console.log(transeActions);
   return (
     //  main div
-    <div className="md:w-2/5 sm:w-3/5 mx-auto py-7 w-4/5 rounded-3xl bg-gray-100 px-3" >
-      <OverViewComponent
-        income={income}
-        expense={expense}
-        addToTransActionsList={addToTransActionsList}
-      />
-    </div>
+    <>
+      <div className="md:w-2/5 sm:w-3/5 mx-auto py-7 w-4/5 rounded-3xl bg-gray-100 px-3">
+        <OverViewComponent
+          income={income}
+          expense={expense}
+          addToTransActionsList={addToTransActionsList}
+        />
+      </div>
+      <TranseActionList transeActions={transeActions} />
+    </>
 
     // End main div
   );
