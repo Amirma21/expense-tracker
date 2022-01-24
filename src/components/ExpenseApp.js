@@ -21,8 +21,6 @@ const ExpenseApp = () => {
         : (exp = exp + parseFloat(t.amount));
     });
 
-    console.log(inc, exp ,transeActions.length);
-
     setIncome(inc);
     setexpense(exp);
   }, [transeActions]);
@@ -37,6 +35,7 @@ const ExpenseApp = () => {
           addToTransActionsList={addToTransActionsList}
         />
       </div>
+
       <TranseActionList transeActions={transeActions} />
     </>
 

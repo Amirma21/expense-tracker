@@ -46,25 +46,27 @@ const TranseActionForm = ({ addToTransActionsList }) => {
         <div className="flex items-center justify-around">
           <div className="mx-3 flex items-center">
             <input
+            id="incomeInput"
               type="radio"
               value="income"
               name="type"
               onChange={changeHandler}
               checked={formValues.type === "income"}
             />
-            <label htmlFor="" className="mx-1">
+            <label htmlFor="incomeInput" className="mx-1 cursor-pointer">
               income
             </label>
           </div>
           <div className="mx-3 flex items-center">
             <input
+            id="expenseInput"
               type="radio"
               value="expense"
               name="type"
               onChange={changeHandler}
               checked={formValues.type === "expense"}
             />
-            <label className="mx-1">expense</label>
+            <label htmlFor="expenseInput" className="mx-1 cursor-pointer">expense</label>
           </div>
         </div>
         <button
