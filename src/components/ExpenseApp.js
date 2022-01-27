@@ -9,7 +9,43 @@ const ExpenseApp = () => {
   const [transeActions, setTranseActions] = useState([]);
 
   const addToTransActionsList = (formvalues) => {
-    setTranseActions([...transeActions, { ...formvalues, id: Date.now() }]);
+    const date = new Date();
+    const days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    setTranseActions([
+      ...transeActions,
+      {
+        ...formvalues,
+        id: transeActions.length,
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        day : days[date.getDay()] ,
+        dayOfMonth: date.getDate(),
+        month : months[date.getMonth()],
+      },
+    ]);
   };
 
   useEffect(() => {
@@ -20,7 +56,6 @@ const ExpenseApp = () => {
         ? (inc = inc + parseFloat(t.amount))
         : (exp = exp + parseFloat(t.amount));
     });
-
     setIncome(inc);
     setexpense(exp);
   }, [transeActions]);
