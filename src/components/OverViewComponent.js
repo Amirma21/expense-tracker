@@ -22,10 +22,10 @@ const OverViewComponent = ({ income, expense, addToTransActionsList }) => {
 
       {/* income and expense boxes */}
       <div className="flex  justify-around  w-4/5 mx-auto ">
-        <div className="flex flex-col items-center bg-white border-2 p-4 mx-2">
+        <div className="flex flex-col items-center bg-white rounded-2xl border-white p-4 mx-2">
           <p>income</p> <span className="text-green-600 font-bold"> $ {income} </span>
         </div>
-        <div className="flex flex-col items-center bg-white border-2 p-4 mx-2">
+        <div className="flex flex-col items-center bg-white rounded-2xl border-white p-4 mx-2">
           <p>expense</p> <span className="text-rose-600 font-bold"> $ {expense}</span>
         </div>
       </div>
