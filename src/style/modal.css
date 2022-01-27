@@ -1,0 +1,24 @@
+.modal{
+    width: 22rem;
+    height: auto ;
+    background-color: white;
+    position: fixed;
+    left: calc(100vw / 2 - 11rem);
+   top: 20%; 
+    box-shadow: 0 20px 120px rgba(0, 0, 0, 1);
+    z-index: 999;
+    border-radius:20px ;
+    transition: all .8s ease-in-out;
+}
+
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition:all .8s ease-in-out;
+}
+
